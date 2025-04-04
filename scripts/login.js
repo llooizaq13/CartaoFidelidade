@@ -2,7 +2,7 @@
 const cadastros = JSON.parse(localStorage.getItem("cadastros")) ||
     [
         {
-
+            
         },
     ]
 
@@ -14,17 +14,31 @@ function Cadastro() {
     const nome = document.getElementById("cadastroNome").value
     const email = document.getElementById("cadastroEmail").value 
     const senha = document.getElementById("cadastroSenha").value
+    const repetirSenha = document.getElementById("repitaSenha").value
+
 
     if (!nome || !email || !senha) {
         alert("Preencha todos os campos!")
-        return;
+        return
     }
 
 
     const existe = cadastros.some(cadastro => cadastro.email === email)
     if (existe) {
         alert("Este e-mail já está cadastrado!")
-        return;
+        return
+    } else if (senha != repetirSenha){
+        alert("As senhas não são iguais. Tente novamente")
+        return
+    } else if (senha.length < 6 ){
+        alert("A senha tem que ter mais que 6 digitos")
+        return
+    } else if (/[a-zA-z]/.test(senha) == false){
+        alert("A senha tem que ter pelo menos uma letra")
+        return
+    } else if (/\d/.test(senha) == false) {
+        alert("A senha tem que ter pelo menos um numero")
+        return
     }
 
     cadastros.push({ nome, email, senha })
