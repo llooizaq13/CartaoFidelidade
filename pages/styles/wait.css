@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+:root{
+    --Azul: #4785DB;
+}
+main{
+    background-color: var(--Azul);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+img{
+    margin: auto;
+    animation: zoomInfinito 900s linear infinite;
+}
+
+@keyframes zoomInfinito {
+    0% {
+        transform: scale(1); /* Começa no tamanho normal */
+    }
+    100% {
+        transform: scale(100); /* Aumenta progressivamente até um grande zoom */
+    }
+}
