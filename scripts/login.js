@@ -45,7 +45,10 @@ function Login() {
     )
 
     if (verificar) {
-        alert(`Login bem sucedido! bem vindo ${verificar.nome}`)
+        //alert(`Login bem sucedido! bem vindo ${verificar.nome}`)
+        event.preventDefault();
+        local = window.document.location.href = "/pages/wait.html"
+        console.log(local)
     } else if (email === "" || password === ""){
         alert("Preencha todos os campos por favor")
     }

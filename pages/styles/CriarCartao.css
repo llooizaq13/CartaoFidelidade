@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+:root{
+    --Azul: #4785DB;
+}
+main{
+    background-color: var(--Azul);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+img{
+    margin: auto;
+}
