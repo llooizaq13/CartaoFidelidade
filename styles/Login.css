@@ -9,6 +9,7 @@
 
 body {
     background-color: var(--Azul);
+    margin-bottom: 5rem;
 }
 
 .logo {
@@ -44,7 +45,6 @@ body {
     color: white;
     font-weight: bolder;
 }
-
 /* From Uiverse.io by CristianMontoya98 */ 
 .btn {
     justify-content: center;
