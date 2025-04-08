@@ -1,5 +1,4 @@
-// Exibir todos os cartões do usuário logado
-const loggedInUser = localStorage.getItem("loggedInUser "); // Remover espaço
+const loggedInUser = localStorage.getItem("loggedInUser ");
 const userDetails = JSON.parse(localStorage.getItem("cadastros")).find(cadastro => cadastro.email === loggedInUser);
 
 if (userDetails) {
