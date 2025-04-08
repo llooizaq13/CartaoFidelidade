@@ -2,17 +2,22 @@
 const cadastros = JSON.parse(localStorage.getItem("cadastros")) ||
     [
         {
-            
+
         },
     ]
 
 const armazenar = () => {
-    localStorage.setItem("cadastros", JSON.stringify(cadastros))
+    try {
+        localStorage.setItem("cadastros", JSON.stringify(cadastros))
+    }
+    catch(err) {
+        console.log("Não foi possivel guardar no LocalStorage:", err)
+    }
 }
 
 function Cadastro() {
     const nome = document.getElementById("cadastroNome").value
-    const email = document.getElementById("cadastroEmail").value 
+    const email = document.getElementById("cadastroEmail").value
     const senha = document.getElementById("cadastroSenha").value
     const repetirSenha = document.getElementById("repitaSenha").value
 
@@ -27,13 +32,13 @@ function Cadastro() {
     if (existe) {
         alert("Este e-mail já está cadastrado!")
         return
-    } else if (senha != repetirSenha){
+    } else if (senha != repetirSenha) {
         alert("As senhas não são iguais. Tente novamente")
         return
-    } else if (senha.length < 6 ){
+    } else if (senha.length < 6) {
         alert("A senha tem que ter mais que 6 digitos")
         return
-    } else if (/[a-zA-z]/.test(senha) == false){
+    } else if (/[a-zA-z]/.test(senha) == false) {
         alert("A senha tem que ter pelo menos uma letra")
         return
     } else if (/\d/.test(senha) == false) {
@@ -59,14 +64,16 @@ function Login() {
     )
 
     if (verificar) {
-        //alert(`Login bem sucedido! bem vindo ${verificar.nome}`)
-        event.preventDefault();
+        event.preventDefault()
+        localStorage.setItem("loggedInUser ", email)
         local = window.document.location.href = "/pages/wait.html"
         console.log(local)
-    } else if (email === "" || password === ""){
+    } else if (email === "" || password === "") {
         alert("Preencha todos os campos por favor")
     }
     else {
         alert("Email ou senha incorreto")
     }
 }
+
+console.log(cadastros)  

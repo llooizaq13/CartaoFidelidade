@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARCAQUI - Cartão Fidelidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/Cartao.css">
+</head>
+<body> 
+
+    <header>
+        <div class="logo">
+            <iframe src="../components/Logo.html" frameborder="0" height="400px" width="500px"  ></iframe>
+        </div>
+    </header>
+
+    <main class="main-screen" id="main-screen">
+        <div class="create-card-btn" id="create-card-btn">
+            <img src="../img/Card.png">
+        </div>
+    </main>
+
+    <div id="form-screen" class="hidden">
+        <img class="form-title" src="../img/CardCreate.png">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="card-name">Nome do Cartão</label>
+                <input type="text" id="card-name" placeholder="Ex: TOP FITNESS">
+            </div>
+            
+            <div class="form-group">
+                <label for="card-reward">Recompensa</label>
+                <input type="text" id="card-reward" placeholder="Ex: 1 Whey grátis">
+            </div>
+            
+            <div class="form-group">
+                <label for="stamp-count">Quantidade de Selos</label>
+                <select id="stamp-count" class="form-group input">
+                    <option value="5">5 selos</option>
+                    <option value="10" selected>10 selos</option>
+                    <option value="15">15 selos</option>
+                    <option value="20">20 selos</option>
+                </select>
+            </div>
+            
+            <button id="create-btn" class="btn btn-primary">Criar Cartão</button>
+        </div>
+    </div>
+
+    <script src="../scripts/Cartao.js"></script>
+</body>
+</html>
