@@ -9,23 +9,23 @@ body {
     background-color: #4785DB;
     color: white;
     min-height: 100vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 20vh, 1fr;
 }
 
-.logo {
-    position: absolute;
+
+.logo{
+    padding-top: 2rem;
+    grid-row: 1;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 35rem;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 90%;
-    height: auto;
+    img{
+        height: 20vh;
+        display: block;
+    }
 }
-
 ::placeholder {
     color: white;
 }
@@ -36,15 +36,13 @@ body {
 
 
 .main-screen {
-    flex: 1;
-    display: flex;
+    grid-row: 2;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .create-card-btn {
-    margin-top: 10rem;
     width: auto;
     border-radius: 20px;
     display: flex;
@@ -54,6 +52,10 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     margin-bottom: 30px;
+    
+}
+.form-screen{
+    grid-row: 3;
 }
 
 .form-container {
@@ -140,11 +142,17 @@ button:hover {
 
 @media (max-width: 768px) {
     .form-container {
+        width: 80vw;
         padding: 20px;
+    }
+    .create-card-btn img{
+        width: 80vw;
+        margin: auto;
+        margin-top: -25vh;
     }
 
     .form-title {
-        width: 100%;
+        width: 80%;
         bottom: -1.4rem;
     }
 }
