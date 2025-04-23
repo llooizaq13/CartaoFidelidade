@@ -421,11 +421,9 @@ function shareCard(card, userPhone) {
         return;
     }
 
-    // Supondo que o número tem DDD + número (sem o 55 no início)
-    const formattedPhone = `55${cleanedPhone}`;
+    const formattedPhone = `55${cleanedPhone}`
 
-    // Para exibição legível
-    const displayPhone = formatPhoneBR(userPhone);
+    const displayPhone = formatPhoneBR(userPhone)
 
     const message = `*Cartão Fidelidade ${card.name}*\n\n` +
         `*Recompensa:* ${card.reward}\n` +
