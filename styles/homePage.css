@@ -22,14 +22,16 @@ header {
     border-bottom: solid 1px rgb(255, 255, 255);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
-    .logo{
+
+    .logo {
         padding-top: 2rem;
         grid-row: 1;
         margin: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        img{
+
+        img {
             height: 20vh;
             display: block;
         }
@@ -130,21 +132,24 @@ button:hover:after {
 
 
 @media (max-width: 768px) {
-    header{
+    header {
         width: 90vw;
-        .logo{
+
+        .logo {
             padding-top: .5rem;
             grid-row: 1;
             margin: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            img{
+
+            img {
                 display: flex;
                 height: 90vh;
             }
         }
     }
+
     #card-details {
         width: 90%;
     }

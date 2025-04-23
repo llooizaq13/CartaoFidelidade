@@ -23,3 +23,4 @@ userCards.forEach(card => {
     `
     userCardsDiv.appendChild(cardDiv);
 });
+
