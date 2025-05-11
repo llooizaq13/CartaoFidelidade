@@ -36,13 +36,12 @@ userCards.forEach(card => {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card';
 
-    // Pega os 3 primeiros clientes para exibir
-    const firstClients = clientesComCartao.slice(0, 3);
-    const remainingClientsCount = clientesComCartao.length - firstClients.length;
+    // Pegando até os 3 primeiros nomes
+    const firstClients = card.clients?.slice(0, 3) || [];
+    const remainingClientsCount = (card.clients?.length || 0) - firstClients.length;
 
-    const clientsHTML = firstClients.map(cliente => `<li>${cliente.name}</li>`).join('');
+    const clientsHTML = firstClients.map(name => `<li>${name}</li>`).join('');
 
-    // Criação do HTML do cartão, incluindo a parte de clientes se existirem
     cardDiv.innerHTML = `
         <div id="card-details">
             <h2 class="card-name">${card.name}</h2>
@@ -51,17 +50,14 @@ userCards.forEach(card => {
                 ${card.stamps} ${card.stamps === 1 ? 'selo' : 'selos'}
             </div>
             <div class="clients-section">
-                <h4>Clientes com cartão ${card.name}:</h4>
-                ${clientesComCartao.length > 0 ? `
-                    <ul class="client-list">
-                        ${clientsHTML}
-                    </ul>
-                    ${remainingClientsCount > 0 ? `<p class="extra-clients">+${remainingClientsCount} cliente(s)</p>` : ''}
-                ` : '<p>Nenhum cliente vinculado a este cartão.</p>'}
+                <h4>Clientes:</h4>
+                <ul class="client-list">
+                    ${clientsHTML}
+                </ul>
+                ${remainingClientsCount > 0 ? `<p class="extra-clients">+${remainingClientsCount} cliente(s)</p>` : ''}
             </div>
         </div>
     `;
 
-    // Adiciona o card com clientes (ou mensagem) à interface
     userCardsDiv.appendChild(cardDiv);
 });
