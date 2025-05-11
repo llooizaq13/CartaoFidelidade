@@ -36,23 +36,51 @@ body {
 
 
 .main-screen {
-    grid-row: 2;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+    padding-bottom: 2rem;
 }
 
-.create-card-btn {
-    width: auto;
+.create-card-btn img {
+    margin-top: 10rem;
+    margin-bottom: 30px;
+    height: auto;
+    display: grid;
+    place-items: center;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
-    margin-bottom: 30px;
     
+    
+}
+.create-card-btn img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+     background-position-x: 0;
+    background-position-y: 0;
+    animation-play-state: running;
+    background: linear-gradient(#1570E6) repeat-x #022e40;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    background-size: 200% 100%;
+    background-position-x: 0;
+    background-position-y: 20em;
+    transition: background-position-y 1s ease;
+    animation: waveAnimation 14s infinite linear;
+    animation-play-state: running;
+    animation-play-state: paused;
+    
+}
+
+@keyframes waveAnimation{
+    from {
+        background-position-x: 0%;
+    }
+    to {
+        background-position-x: 200%;
+    }
 }
 .form-screen{
     grid-row: 3;
