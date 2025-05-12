@@ -52,7 +52,12 @@ main {
     border-radius: 10px;
     width: 25rem;
 }
-
+#card-details:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+}
 .stamps-grid {
     display: flex;
     flex-wrap: wrap;
@@ -129,6 +134,52 @@ button:hover:after {
     max-width: 100%;
     height: auto;
 }
+
+.hidden {
+    display: none;
+}
+
+
+
+.modal-content {
+  color: black;
+
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 40vw;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 8px 10px 20px 0px rgba(0,0,0,0.75);
+  max-width: 900px;
+  border-radius: 20px;
+  h3{
+    margin-top: -2rem ;
+  }
+  li{
+    margin: 1rem 0;
+  }
+}
+
+#close-modal {
+    background-color: #FF5C5C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.close:hover {
+  color: black;
+}
+
+
 
 
 @media (max-width: 768px) {

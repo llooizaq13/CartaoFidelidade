@@ -188,7 +188,7 @@ function handleLinkCard(e) {
             <p><strong>Selos:</strong> ${card.markedStamps || 0}/${card.stamps}</p>
             <div class="stamps-preview">
                 ${Array.from({ length: card.stamps }, (_, i) =>
-            `<div class="stamp-in-preview ${i < (card.markedStamps || 0) ? 'marked' : ''}"></div>`
+            `<div class="stamp-in-preview ${i < (card.markedStamps || 0) ? 'marked' : ''}"></div>` 
         ).join('')}
             </div>
         `;
@@ -233,6 +233,13 @@ function handleLinkCard(e) {
             return;
         }
 
+        // Adicionando o cliente ao cartão
+        selectedCardData.client = { 
+            id: user.id,
+            name: user.name,
+            phone: user.phone
+        };
+
         user.linkedCards.push(selectedCardData);
         saveUsersToStorage();
         alert(`Cartão "${cardName}" vinculado com sucesso!`);
@@ -240,6 +247,7 @@ function handleLinkCard(e) {
         renderUsers();
     };
 }
+
 
 function handleEdit(e) {
     const userId = e.target.dataset.id;
