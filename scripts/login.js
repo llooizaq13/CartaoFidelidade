@@ -63,6 +63,7 @@ function Login() {
         cadastro => cadastro.email === email && cadastro.senha === password
     )
 
+    
     if (verificar) {
         event.preventDefault()
         localStorage.setItem("loggedInUser ", email)
