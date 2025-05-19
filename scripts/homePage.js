@@ -40,7 +40,7 @@ userCards.forEach(card => {
     const firstClients = clientesComCartao.slice(0, 3);
     const remainingClientsCount = (clientesComCartao.length || 0) - firstClients.length;
 
-    const clientsHTML = firstClients.map(cliente => `<li>${cliente.name}</li>`).join('');
+    const clientsHTML = firstClients.map(cliente => <li>${cliente.name}</li>).join('');
     
     cardDiv.innerHTML = `
         <div id="card-details">
@@ -55,7 +55,7 @@ userCards.forEach(card => {
                     <ul class="client-list">
                         ${clientsHTML}
                     </ul>
-                    ${remainingClientsCount > 0 ? `<p class="extra-clients">+${remainingClientsCount} cliente(s)</p>` : ''}
+                    ${remainingClientsCount > 0 ? <p class="extra-clients">+${remainingClientsCount} cliente(s)</p> : ''}
                 ` : '<p>Nenhum cliente vinculado a este cartão.</p>'}
             </div>
         </div>
