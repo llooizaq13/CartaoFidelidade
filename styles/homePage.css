@@ -51,6 +51,11 @@ main {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     width: 25rem;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
+    }
 }
 
 .stamps-grid {
@@ -128,6 +133,55 @@ button:hover:after {
 .logo img {
     max-width: 100%;
     height: auto;
+}
+/* Modal - sobreposição */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; /* Inicialmente escondido */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal - conteúdo */
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Mostrar modal quando ativado */
+.show {
+    display: flex !important;
+}
+
+/* Esconder com classe "hidden" */
+.hidden {
+    display: none !important;
+}
+
+/* Botão de fechar */
+#close-modal {
+    display: inline-block;
+    margin-bottom: 1rem;
+    background-color: #4785DB;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: right;
 }
 
 
