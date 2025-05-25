@@ -98,3 +98,7 @@ userCards.forEach(card => {
         modal.classList.remove('show');
     });
 });
+function sair() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "../index.html"; // Redireciona para a página de login
+}
