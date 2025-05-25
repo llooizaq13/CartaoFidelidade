@@ -14,6 +14,7 @@ body {
     grid-template-rows: 20vh, 1fr, 1fr;
 }
 
+
 header {
     width: 20vw;
     margin: auto;
@@ -84,12 +85,27 @@ main {
     padding: 10px;
     border-radius: 5px;
     color: white;
+    gap:5px;
+    display: flex;
+    flex-direction: column; 
 }
 
 #user-info p {
     margin: 0;
 }
-
+#sair {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 4rem;
+    text-decoration: none;
+    text-align: center;
+}
+#sair:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 .btn {
     justify-content: center;
     align-content: center;
